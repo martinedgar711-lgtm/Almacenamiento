@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.contentfile
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,5 +35,11 @@ class MainActivity : AppCompatActivity() {
             Context.MODE_PRIVATE).use { output ->
             output.write(fileContents.toByteArray())
         }
-    }
+
+        openFileInput("datos_usuario.txt").buffered
+        Reader().use { reader ->
+            val text = reader.readText()
+            binding.tvwContentFile.txt = text
+
+        }
 }
