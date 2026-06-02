@@ -8,9 +8,14 @@
     tools:context=".MainActivity">
 
     <TextView
-        andorid:id
+        android:id="@+id/tvwRuta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:conteext=".MainActivity" />
 
+    <TextView
+        android:id="@+id/tvwContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:conteext=".MainActivity" />
 </LinearLayout>

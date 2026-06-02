@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.contentfile
+import java.io.File
 
 
 class MainActivity : AppCompatActivity() {
@@ -49,5 +50,12 @@ class MainActivity : AppCompatActivity() {
         arrayArchivos.forEach { nombre ->
             Log.i("Stored", nombre)
         }
+
+        val cacheFile =
+            File.createTempFile("session_tmp", ".dat",
+                cacheDir)
+        cacheFile.writeText("ID_Sesion: 0x99283")
+
+
     }
 }
