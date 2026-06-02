@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
@@ -25,5 +26,13 @@ class MainActivity : AppCompatActivity() {
         val path: String = filesDir.absolutePath
 
         binding.tvwRuta.text = path
+
+        val filename = "datos_usuario.txt"
+        val fileContents = "Puntaje: 1500\nNivel: 5"
+
+        openFileOutput(filename,
+            Context.MODE_PRIVATE).use { output ->
+            output.write(fileContents.toByteArray())
+        }
     }
 }
